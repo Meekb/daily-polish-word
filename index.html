@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Polish Word</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+<div class="bg-white shadow-md rounded-xl w-11/12 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
+    <div class="py-2 rounded-t-xl text-white header">
+        <h1 class="w-full text-center text-2xl font-bold">Daily Polish Word</h1>
+    </div>
+    <div class="p-6 text-center space-y-2">
+        <div>
+            <div class="flex items-center justify-center gap-2">
+                <span class="text-2xl">🇵🇱</span>
+                <div class="text-2xl font-semibold text-blue-700" id="word">Cześć</div>
+            </div>
+            <div id="pronunciation" class="text-sm text-gray-500 italic mb-4">cheshch</div>
+            <div id="translation" class="text-base text-gray-700 font-medium mb-4">Hi / Hello</div>
+        </div>
+
+        <div class="mt-4">
+            <div id="example" class="italic text-gray-700">Cześć, jak się masz?</div>
+            <div id="english" class="italic text-gray-500 mb-4">Hello, how's it going?</div>
+        </div>
+
+        <button id="nextBtn" class="mt-6 bg-[#D4213D] text-white px-4 py-2 rounded hover:bg-[#B81C35] transition">
+            Next Word
+        </button>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
