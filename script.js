@@ -1,3 +1,29 @@
+document.addEventListener("DOMContentLoaded", () => {
+    // Set theme from localStorage if available
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        document.documentElement.classList.add("dark");
+    } else {
+        document.documentElement.classList.remove("dark");
+    }
+
+    const toggleBtn = document.getElementById("toggleDark");
+
+    toggleBtn.textContent = document.documentElement.classList.contains("dark")
+        ? "Toggle Light"
+        : "Toggle Dark";
+
+    toggleBtn.addEventListener("click", () => {
+        const html = document.documentElement;
+        const isDark = html.classList.toggle("dark");
+
+        // Update button text
+        toggleBtn.textContent = isDark ? "Toggle Light" : "Toggle Dark";
+
+        // Save preference
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+
 const words = [
     {
         word: "Cześć",
@@ -141,20 +167,21 @@ const words = [
     }
 ];
 
-let currentIndex = 0;
+    let currentIndex = 0;
 
-function showWord(index) {
-    const w = words[index];
-    document.getElementById("word").textContent = w.word;
-    document.getElementById("pronunciation").textContent = w.pronunciation;
-    document.getElementById("translation").textContent = w.translation;
-    document.getElementById("example").textContent = w.example;
-    document.getElementById("english").textContent = w.english;
-}
+    function showWord(index) {
+        const w = words[index];
+        document.getElementById("word").textContent = w.word;
+        document.getElementById("pronunciation").textContent = w.pronunciation;
+        document.getElementById("translation").textContent = w.translation;
+        document.getElementById("example").textContent = w.example;
+        document.getElementById("english").textContent = w.english;
+    }
 
-document.getElementById("nextBtn").addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % words.length;
+    document.getElementById("nextBtn").addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % words.length;
+        showWord(currentIndex);
+    });
+
     showWord(currentIndex);
 });
-
-showWord(currentIndex);

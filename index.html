@@ -5,12 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daily Polish Word</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css" />
-
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
-<div class="bg-white shadow-md rounded-xl w-11/12 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
-    <div class="py-2 rounded-t-xl text-white header">
+<div class="content bg-white dark:bg-gray-900 shadow-md rounded-xl w-11/12 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
+    <button id="toggleDark" class="absolute top-4 right-4 text-sm px-2 py-1 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded">
+        Toggle Dark
+    </button>
+    <div class="py-2 flex flex-row space-between rounded-t-xl text-white bg-[#D4213D]">
         <h1 class="w-full text-center text-2xl font-bold">Daily Polish Word</h1>
     </div>
     <div class="p-6 text-center space-y-2">
@@ -19,13 +25,13 @@
                 <span class="text-2xl">🇵🇱</span>
                 <div class="text-2xl font-semibold text-blue-700" id="word">Cześć</div>
             </div>
-            <div id="pronunciation" class="text-sm text-gray-500 italic mb-4">cheshch</div>
-            <div id="translation" class="text-base text-gray-700 font-medium mb-4">Hi / Hello</div>
+            <div id="pronunciation" class="text-sm italic mb-4 text-gray-500 dark:text-gray-300">cheshch</div>
+            <div id="translation" class="text-base font-medium mb-4 text-gray-700 dark:text-gray-200">Hi / Hello</div>
         </div>
 
         <div class="mt-4">
-            <div id="example" class="italic text-gray-700">Cześć, jak się masz?</div>
-            <div id="english" class="italic text-gray-500 mb-4">Hello, how's it going?</div>
+            <div id="example" class="italic text-gray-700 dark:text-gray-100">Cześć, jak się masz?</div>
+            <div id="english" class="italic text-gray-500 mb-4 dark:text-gray-300">Hello, how's it going?</div>
         </div>
 
         <button id="nextBtn" class="mt-6 bg-[#D4213D] text-white px-4 py-2 rounded hover:bg-[#B81C35] transition">
