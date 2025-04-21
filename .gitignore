@@ -1,0 +1,19 @@
+# JetBrains/WebStorm
+.idea/
+
+# macOS system files
+.DS_Store
+
+# Node
+node_modules/
+dist/
+
+# Logs
+*.log
+
+# Optional: VS Code users
+.vscode/
+
+# Environment files
+.env
+.idea/
